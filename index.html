@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Playlists</title>
+        <script type="text/javascript" src="jwplayer.js">
+        </script>
+        <script type="text/javascript" src="settings.js">
+        </script>
+    </head>
+    <body>
+
+
+Usage: index.html?type=progressive
+
+        <script type="text/javascript">
+        /* 
+        addy notes:
+        at the moment the type is necessary for switching between playlists
+        however this could easily be done via in-file configuration instead.
+        I belive most people would use that option so I might opt for making
+        that change.
+        
+        */
+            var type = window.location.href.split("?type=")[1];
+            document.title += ": " + type;
+            var playlists = {
+            	progressive: [{
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/gSzpo2wh-480.jpg"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/guYqV1AB-480.jpg"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/DMJODX8R-480.jpg"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/gSzpo2wh-480.jpg"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/guYqV1AB-480.jpg"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/DMJODX8R-480.jpg"
+            	}],
+            	rtmp: [{
+            		levels: [{
+            			bitrate: "2020",
+            			file: "cg4V7TQw-5RGjFAQM-364803.mp4",
+            			width: "1080"
+            		}, {
+            			bitrate: "1310",
+            			file: "cg4V7TQw-5RGjFAQM-364802.mp4",
+            			width: "720"
+            		}, {
+            			bitrate: "810",
+            			file: "cg4V7TQw-5RGjFAQM-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "520",
+            			file: "cg4V7TQw-5RGjFAQM-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/5RGjFAQM.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			bitrate: "380",
+            			file: "cg4V7TQw-ajuWPle1-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "270",
+            			file: "cg4V7TQw-ajuWPle1-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/ajuWPle1.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			bitrate: "2020",
+            			file: "cg4V7TQw-5RGjFAQM-364803.mp4",
+            			width: "1080"
+            		}, {
+            			bitrate: "1310",
+            			file: "cg4V7TQw-5RGjFAQM-364802.mp4",
+            			width: "720"
+            		}, {
+            			bitrate: "810",
+            			file: "cg4V7TQw-5RGjFAQM-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "520",
+            			file: "cg4V7TQw-5RGjFAQM-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/5RGjFAQM.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			bitrate: "380",
+            			file: "cg4V7TQw-ajuWPle1-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "270",
+            			file: "cg4V7TQw-ajuWPle1-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/ajuWPle1.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			bitrate: "2020",
+            			file: "cg4V7TQw-5RGjFAQM-364803.mp4",
+            			width: "1080"
+            		}, {
+            			bitrate: "1310",
+            			file: "cg4V7TQw-5RGjFAQM-364802.mp4",
+            			width: "720"
+            		}, {
+            			bitrate: "810",
+            			file: "cg4V7TQw-5RGjFAQM-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "520",
+            			file: "cg4V7TQw-5RGjFAQM-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/5RGjFAQM.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			bitrate: "380",
+            			file: "cg4V7TQw-ajuWPle1-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "270",
+            			file: "cg4V7TQw-ajuWPle1-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/ajuWPle1.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}],
+            	mixed: [{
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/gSzpo2wh-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/gSzpo2wh-480.jpg"
+            	}, {
+            		levels: [{
+            			bitrate: "2020",
+            			file: "cg4V7TQw-5RGjFAQM-364803.mp4",
+            			width: "1080"
+            		}, {
+            			bitrate: "1310",
+            			file: "cg4V7TQw-5RGjFAQM-364802.mp4",
+            			width: "720"
+            		}, {
+            			bitrate: "810",
+            			file: "cg4V7TQw-5RGjFAQM-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "520",
+            			file: "cg4V7TQw-5RGjFAQM-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/5RGjFAQM.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/DMJODX8R-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/DMJODX8R-480.jpg"
+            	}, {
+            		levels: [{
+            			bitrate: "380",
+            			file: "cg4V7TQw-ajuWPle1-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "270",
+            			file: "cg4V7TQw-ajuWPle1-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/ajuWPle1.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}, {
+            		levels: [{
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-486405.mp4"
+            		}, {
+            			file: "http://content.bitsontherun.com/videos/guYqV1AB-604476.ogv"
+            		}],
+            		image: "http://content.bitsontherun.com/thumbs/guYqV1AB-480.jpg"
+            	}, {
+            		levels: [{
+            			bitrate: "2020",
+            			file: "cg4V7TQw-5RGjFAQM-364803.mp4",
+            			width: "1080"
+            		}, {
+            			bitrate: "1310",
+            			file: "cg4V7TQw-5RGjFAQM-364802.mp4",
+            			width: "720"
+            		}, {
+            			bitrate: "810",
+            			file: "cg4V7TQw-5RGjFAQM-364801.mp4",
+            			width: "480"
+            		}, {
+            			bitrate: "520",
+            			file: "cg4V7TQw-5RGjFAQM-364800.mp4",
+            			width: "320"
+            		}],
+            		image: "http://thumbs.bitsontherun.com/5RGjFAQM.jpg",
+            		type: "RTMP",
+            		streamer: "rtmp://sarzsmiotvm99.cloudfront.net/cfx/st"
+            	}]
+            };
+            var playlist = playlists[type];
+        </script>
+        
+        <p>
+            This page is meant to test playlists with various playlist related config options. For now, all of them use the same playlist.
+        </p>
+        <p>
+            It contains three players with multiple sources, so it should play back in IE9, FF, Chrome, Safari, and Opera. IE < 9 will simply display "HTML5 Player should replace this".
+        </p>
+
+        <p>
+            The standard playlist
+        </p>
+        <div height="270" id="player1" width="480">
+            HTML5 Player should replace this
+        </div>
+        <script type="text/javascript">
+            jwplayer("player1").setup({
+            	players: settings.players(window.location.href),
+            	playlist: playlist
+            });
+        </script>
+        <p>
+            Continuously repeat with shuffle on
+        </p>
+
+        <div height="270" id="player2" width="480">
+            HTML5 Player should replace this
+        </div>
+        <script type="text/javascript">
+            jwplayer("player2").setup({
+            	players: settings.players(window.location.href),
+            	playlist: playlist,
+            	repeat: "always",
+            	shuffle: true,
+            	debug: "console"
+            });
+        </script>
+        <p>
+            Play through once and stop after playing the last item
+        </p>
+        <div height="270" id="player3" width="480">
+            HTML5 Player should replace this
+        </div>
+
+        <script type="text/javascript">
+            jwplayer("player3").setup({
+            	players: settings.players(window.location.href),
+            	playlist: playlist,
+            	repeat: "list"
+            });
+        </script>
+        <p>
+            Go to a specific item
+        </p>
+        <div height="270" id="player4" width="480">
+            HTML5 Player should replace this
+        </div>
+        <script type="text/javascript">
+            jwplayer("player4").setup({
+            	players: settings.players(window.location.href),
+            	playlist: playlist
+            });
+        </script>
+        <a href="#" onclick="jwplayer('player4').playlistItem(0);return false;">Play item 1</a>
+
+        <a href="#" onclick="jwplayer('player4').playlistItem(1);return false;">Play item 2</a>
+        <a href="#" onclick="jwplayer('player4').playlistItem(2);return false;">Play item 3</a>
+        <p>
+            Playlist + Playlist.position
+        </p>
+        <div height="270" id="player5" width="480">
+            HTML5 Player should replace this
+        </div>
+        <script type="text/javascript">
+            jwplayer("player5").setup({
+            	//players: settings.players(window.location.href, ["flash", "html5", "download"]),
+            	players: settings.players(window.location.href),
+            	playlist: playlist,
+            	"playlist.position": "right",
+            	"playlist.size": 300,
+            	width: 800
+            });
+        </script>
+
+        <h3>HTML code</h3>
+    </body>
+</html>
